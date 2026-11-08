@@ -26,9 +26,7 @@ android {
                 } else {
                     include(
                         "arm64-v8a",
-                        "armeabi-v7a",
-                        "x86_64",
-                        "x86"
+                        "armeabi-v7a"
                     )
                 }
                 isUniversalApk = abiFilterList.isNullOrEmpty()
@@ -85,7 +83,7 @@ android {
         if (isFdroid) {
             val versionCodes =
                 mapOf(
-                    "armeabi-v7a" to 2, "arm64-v8a" to 1, "x86" to 4, "x86_64" to 3, "universal" to 0
+                    "armeabi-v7a" to 2, "arm64-v8a" to 1
                 )
 
             variant.outputs
@@ -102,7 +100,7 @@ android {
                 }
         } else {
             val versionCodes =
-                mapOf("armeabi-v7a" to 4, "arm64-v8a" to 4, "x86" to 4, "x86_64" to 4, "universal" to 4)
+                mapOf("armeabi-v7a" to 4, "arm64-v8a" to 4)
 
             variant.outputs
                 .map { it as com.android.build.gradle.internal.api.ApkVariantOutputImpl }
